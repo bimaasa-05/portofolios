@@ -1,0 +1,276 @@
+/* --- VARIABEL WARNA & FONT --- */
+:root {
+    --bg-color: #0a192f;
+    --green: #64ffda;
+    --light-slate: #ccd6f6;
+    --white: #e6f1ff; /* Warna putih lebih terang untuk Nama */
+    --slate: #8892b0;
+    --font-mono: 'SF Mono', 'Fira Code', monospace;
+}
+
+/* --- RESET & DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--light-slate);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.3;
+    overflow-x: hidden;
+}
+
+/* --- NAVBAR / HEADER --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+}
+
+.logo {
+    color: var(--green);
+    font-size: 24px;
+    font-weight: bold;
+    border: 2px solid var(--green);
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    background: rgba(100, 255, 218, 0.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--light-slate);
+    font-size: 13px;
+    font-family: var(--font-mono);
+    transition: 0.3s;
+}
+
+nav ul li a span { color: var(--green); margin-right: 5px; }
+nav ul li a:hover { color: var(--green); }
+
+.resume-btn {
+    border: 1px solid var(--green);
+    color: var(--green) !important;
+    padding: 12px 18px;
+    border-radius: 4px;
+}
+
+/* --- SIDEBAR SOSIAL --- */
+.social-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    z-index: 5;
+}
+
+.social-sidebar a {
+    color: var(--light-slate);
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.social-sidebar a:hover {
+    color: var(--green);
+    transform: translateY(-3px);
+}
+
+.social-sidebar .line {
+    width: 1px;
+    height: 100px;
+    background-color: var(--slate);
+}
+
+/* --- SECTION UMUM --- */
+.content-section {
+    min-height: 100vh;
+    padding: 100px 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: clamp(26px, 5vw, 32px);
+    color: var(--light-slate);
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.section-title span {
+    color: var(--green);
+    font-family: var(--font-mono);
+    margin-right: 10px;
+}
+
+/* --- HERO SECTION (Perbaikan Jarak & Nama) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Padding-top ditambah agar "Hi, my name is" tidak tertutup header */
+    padding: 160px 150px 60px 150px; 
+}
+
+.intro {
+    color: var(--green);
+    font-family: var(--font-mono);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-size: clamp(50px, 10vw, 85px);
+    color: var(--white); /* Lebih terang & jelas */
+    font-weight: 800; /* Lebih tebal */
+    line-height: 1.1;
+}
+
+.typewriter-container {
+    font-size: clamp(30px, 6vw, 60px);
+    color: var(--slate);
+    margin-top: 10px;
+}
+
+.cursor {
+    color: var(--green);
+    margin-left: 5px;
+    animation: blink 0.6s infinite;
+}
+
+.description {
+    max-width: 540px;
+    color: var(--slate);
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+.cta-btn {
+    margin-top: 50px;
+    padding: 20px 28px;
+    border: 1px solid var(--green);
+    color: var(--green);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    width: fit-content;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.cta-btn:hover { background: rgba(100, 255, 218, 0.1); }
+
+/* --- TIMELINE PERJALANAN (About Me) --- */
+.timeline {
+    border-left: 2px solid #233554;
+    padding-left: 30px;
+    margin-top: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -39px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--green);
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    color: var(--green);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.timeline-content h4 {
+    color: var(--light-slate);
+    font-size: 18px;
+}
+
+.timeline-content p {
+    color: var(--slate);
+    font-size: 15px;
+}
+
+/* --- PROJECT CARDS --- */
+.project-card {
+    background-color: #112240;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.project-card:hover { transform: translateY(-5px); }
+.project-image img { width: 100%; border-radius: 4px; margin-bottom: 20px; opacity: 0.8; }
+.project-image img:hover { opacity: 1; }
+.project-info a { color: var(--light-slate); font-size: 20px; margin-right: 15px; }
+
+/* --- CONTACT SECTION --- */
+.contact-section { align-items: center; text-align: center; }
+.contact-buttons { display: flex; gap: 20px; margin-top: 30px; }
+.contact-btn {
+    border: 1px solid var(--green);
+    color: var(--green);
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    header { padding: 0 20px; height: 80px; }
+    nav ul { gap: 12px; }
+    nav ul li a { font-size: 11px; }
+    .hero { padding: 140px 30px 60px 30px; }
+    .content-section { padding: 80px 30px; }
+    .social-sidebar { left: 15px; }
+    .contact-buttons { flex-direction: column; }
+    .timeline { padding-left: 20px; }
+    .timeline-dot { left: -28px; }
+}
+
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
