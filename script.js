@@ -10,23 +10,41 @@ function typeEffect() {
     }
 }
 
+// Observer dengan logika reset agar animasi bisa berulang
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+            entry.target.classList.add('show-animation');
+        } else {
+            // Hapus class ini agar saat di-scroll kembali, animasi muncul lagi
+            entry.target.classList.remove('show-animation');
         }
     });
-});
+}, { threshold: 0.1 }); // Trigger saat 10% elemen terlihat
 
 window.onload = () => {
     typeEffect();
-    // Tambahkan timeline-item ke daftar animasi
-    const fadeElements = document.querySelectorAll('.name, .description, .cta-btn, .project-card, .timeline-item');
+
+    // Logika Smooth Scroll
+    const menuLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+    // Target elemen yang ingin diberi animasi scroll
+    const fadeElements = document.querySelectorAll('.name, .description, .cta-btn, .project-card, .timeline-item, .section-title');
     fadeElements.forEach(el => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(30px)";
-        el.style.transition = "all 0.8s ease-out";
+        el.classList.add('hidden-animation'); // Beri state awal tersembunyi
         observer.observe(el);
     });
 };
