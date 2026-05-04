@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bima | Web Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">B</a>
+        <nav>
+            <ul>
+                <li><a href="#about"><span>01.</span> About</a></li>
+                <li><a href="#projects"><span>02.</span> My Project</a></li>
+                <li><a href="#contact"><span>03.</span> Contact Me</a></li>
+                <li><a href="#contact" class="resume-btn">Let's Chat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="social-sidebar">
+        <a href="https://github.com/bimaasa-05" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://instagram.com/#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <div class="line"></div>
+    </div>
+
+    <main class="hero" id="home">
+        <p class="intro hidden-animation">Hi, my name is</p>
+        <h1 class="name hidden-animation delay-1">Bima.</h1>
+        <h2 class="typewriter-container hidden-animation delay-2">
+            <span id="text"></span><span class="cursor">|</span>
+        </h2>
+        <p class="description hidden-animation delay-3">
+            Saya adalah seorang pengembang web yang berfokus pada membangun 
+            pengalaman digital yang fungsional dan aksesibel.
+        </p>
+        <a href="#about" class="cta-btn hidden-animation delay-3">Learn More About Me</a>
+    </main>
+
+    <section id="about" class="content-section">
+        <h2 class="section-title hidden-animation"><span>01.</span> About Me</h2>
+        <div class="about-content">
+            <div class="about-text hidden-animation delay-1">
+                <p>Halo! Saya Bima. Saya lahir di Indramayu dan memiliki ketertarikan besar di dunia teknologi sejak bangku sekolah.</p>
+                
+                <h3 class="sub-title">Pendidikan & Perjalanan</h3>
+                <div class="timeline">
+                    <div class="timeline-item hidden-animation">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2012 - 2018</div>
+                        <div class="timeline-content">
+                            <h4>SDN KRASAK2</h4>
+                            <p>Mulai mengenal komputer dan dasar-dasar teknologi.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item hidden-animation">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2018 - 2021</div>
+                        <div class="timeline-content">
+                            <h4>MTS As-Ghozali</h4>
+                            <p>Mulai mendalami hobi di bidang IT dan desain grafis.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item hidden-animation">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2021 - Sekarang</div>
+                        <div class="timeline-content">
+                            <h4>SMK YAPIIM INDRAMAYU</h4>
+                            <p>Fokus di Jurusan Rekayasa Perangkat Lunak, mendalami Web Development dan Programming.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="content-section">
+        <h2 class="section-title hidden-animation"><span>02.</span> See My Work</h2>
+        <div class="project-card hidden-animation">
+            <h3 class="project-title">CURD SEDERHANA DARI LARAVEL12</h3>
+            <div class="project-image">
+                <img src="#" alt="MY PROJECT IMAGE">
+            </div>
+            <div class="project-info">
+                <p>Project CRUD sederhana yang dibuat menggunakan Laravel 12 dan MySQL.</p>
+                <a href="https://github.com/bimaasa-05/crud_laravel-12"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="content-section contact-section">
+        <h2 class="section-title hidden-animation"><span>03.</span> Let's Chat</h2>
+        <p class="contact-desc hidden-animation">Ada ide menarik atau ingin bertanya sesuatu? DM saya!</p>
+        <div class="contact-buttons hidden-animation delay-1">
+            <a href="mailto:emailkamu@gmail.com" class="contact-btn"><i class="fa-regular fa-envelope"></i> Email Me</a>
+            <a href="https://instagram.com/usernamekamu" target="_blank" class="contact-btn"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
